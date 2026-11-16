@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Builds
+dist/
+build/
+*.tsbuildinfo
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Test / coverage
+coverage/
+
+# Prisma local dev artifacts
+server/prisma/data/
+server/prisma/*.db
+
+# Local object storage data
+.minio-data/
+uploads/
+
+# Editor / OS
+.DS_Store
+*.log
+
+# Embedded PostgreSQL runtime data
+.embedded-pg/

@@ -1,0 +1,30 @@
+{
+  "name": "gbl80s",
+  "private": true,
+  "version": "0.1.0",
+  "description": "The GBL 80s Story — historical archive platform for the Gippsland Basketball League",
+  "license": "UNLICENSED",
+  "workspaces": [
+    "packages/shared",
+    "server",
+    "client"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev:server": "npm run dev --workspace server",
+    "dev:client": "npm run dev --workspace client",
+    "build:shared": "npm run build --workspace packages/shared",
+    "build:server": "npm run build --workspace server",
+    "build:client": "npm run build --workspace client",
+    "test": "npm run test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "allowScripts": {
+    "prisma@6.19.3": true,
+    "@prisma/engines@6.19.3": true,
+    "esbuild@0.28.2": true,
+    "esbuild@0.25.12": true
+  }
+}

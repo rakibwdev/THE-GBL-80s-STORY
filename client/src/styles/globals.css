@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-navy font-body text-paper antialiased;
+  }
+
+  /* Focus ring carried over from the approved prototype */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    @apply outline-none ring-[3px] ring-rust-focus ring-offset-4 ring-offset-transparent;
+  }
+
+  ::selection {
+    @apply bg-orange text-ink;
+  }
+}
+
+@layer components {
+  /* Editorial kicker: orange dash + tracked uppercase label before every section heading */
+  .kicker {
+    @apply mb-4 flex items-center gap-3 text-[12px] font-extrabold uppercase tracking-kicker text-orange;
+  }
+  .kicker::before {
+    content: '';
+    @apply h-[3px] w-[23px] bg-current;
+  }
+
+  .kicker-rust {
+    @apply text-rust;
+  }
+  .kicker-rust::before {
+    @apply bg-current;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
